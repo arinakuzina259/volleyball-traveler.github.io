@@ -1,0 +1,223 @@
+/* style.css */
+:root {
+    --primary-color: #0055A4; /* Глубокий синий */
+    --accent-color: #FF8C00;  /* Энергичный оранжевый */
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #003d7a 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: var(--accent-color);
+}
+
+/* Основной контент */
+main {
+    padding: 40px 20px;
+    min-height: calc(100vh - 160px); /* Чтобы футер всегда был внизу */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Сетка на главной */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.item {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.item-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd; /* Заглушка */
+    position: relative;
+}
+
+/* Добавим разные заглушки для карточек */
+.item:nth-child(1) .item-img { background-color: #7fb3d5; }
+.item:nth-child(2) .item-img { background-color: #f7dc6f; }
+.item:nth-child(3) .item-img { background-color: #a9dfbf; }
+.item:nth-child(4) .item-img { background-color: #d7bde2; }
+.item:nth-child(5) .item-img { background-color: #f1948a; }
+
+.item-content {
+    padding: 20px;
+}
+
+.item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.item-large {
+    grid-column: span 2;
+}
+
+/* Специальный стиль для страницы "Обо мне" */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.volleyball-icon {
+    flex: 0 0 200px;
+    text-align: center;
+    font-size: 150px;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+/* Футер */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+/* Добавьте эти стили в конец вашего style.css */
+
+/* Стили для изображений */
+.item-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.item:hover .item-img {
+    transform: scale(1.05);
+}
+
+.item-content {
+    padding: 20px;
+}
+
+.item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.item p {
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.item-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
